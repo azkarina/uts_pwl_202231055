@@ -23,7 +23,7 @@ Route::middleware([
     Route::post('/appointment', [HomeController::class, 'appointment'])->name('appointment');
 
     Route::get('/myappointment', [HomeController::class, 'myappointment'])->name('myappointment');
-    Route::get('/cancel-appointment/{id}', [HomeController::class, 'cancel_appoint'])->name('cancel_appoint');
+    Route::delete('/cancel-appointment/{id}', [HomeController::class, 'cancel_appoint'])->name('cancel_appoint');
     Route::get('/edit-appointment/{id}', [HomeController::class, 'edit_appoint'])->name('edit_appoint');
     Route::put('/update-appointment/{id}', [HomeController::class, 'update_appoint'])->name('update_appoint');
 });

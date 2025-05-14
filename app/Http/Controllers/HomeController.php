@@ -62,13 +62,19 @@ class HomeController extends Controller
         }
     }
 
-    public function cancel_appoint($id)
-    {
-        $data=appointment::find($id);
-        $data->delete();
-        return redirect()->back();
 
+
+    public function cancel_appoint($id)
+{
+    $data = Appointment::find($id);
+    
+    if($data && $data->user_id == Auth::user()->id) {
+        $data->delete();
+        return redirect()->back()->with('success', 'Appointment cancelled successfully');
     }
+    
+    return redirect()->back()->with('error', 'Appointment not found');
+}
 
     public function edit_appoint($id)
     {  

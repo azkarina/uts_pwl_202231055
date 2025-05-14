@@ -25,21 +25,14 @@
     </head>
     <body class="font-sans antialiased">
          <!-- Panggil header dari folder home -->
-        @include('home.header')
+        {{-- @include('home.header') --}}
         
         <!-- Konten Utama -->
         <div class="container py-4">
             @yield('content')
         </div>
         
-        <!-- Panggil footer dari folder home -->
-        @include('home.footer')
-    </body>
-</html>
-
-
-
-        {{-- <x-banner />
+        <x-banner />
 
         <div class="min-h-screen bg-gray-100">
             @livewire('navigation-menu')
@@ -61,6 +54,6 @@
 
         @stack('modals')
 
-        @livewireScripts --}}
-    {{-- </body>
-</html> --}}
+        @livewireScripts 
+        </body>
+</html>

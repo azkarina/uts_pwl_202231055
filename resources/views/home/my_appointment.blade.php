@@ -39,10 +39,17 @@
         <td>{{ $appoints -> date}}</td>
         <td>{{ $appoints -> message}}</td>
         <td>{{ $appoints -> status}}</td>
-        <td>
-          
-           <a class="btn btn-primary" href="{{ route('edit_appoint', $appoints->id) }}">Edit</a>
-          <a class="btn btn-danger" onclick="return confirm('Are you sure to delete this?')" href="{{ url('cancel_appoint', $appoints->id) }}">Cancel</a>
+        <td style="display: flex; gap: 5px; justify-content: center; align-items: center;">
+    <a class="btn btn-primary" href="{{ route('edit_appoint', $appoints->id) }}">Edit</a>
+    <form action="{{ route('cancel_appoint', $appoints->id) }}" method="POST" style="margin: 0;">
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')">
+            Cancel
+        </button>
+        </form>
+    </td>
+        
         </td>
       </tr>
       @endforeach

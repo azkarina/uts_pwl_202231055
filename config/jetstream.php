@@ -1,7 +1,15 @@
 <?php
 
 use Laravel\Jetstream\Features;
+<<<<<<< HEAD
 use Laravel\Jetstream\Http\Middleware\AuthenticateSession;
+=======
+use Laravel\Jetstream\Http\Middleware\AuthenticateSession;  
+use Laravel\Jetstream\Features as JetstreamFeatures;
+
+
+
+>>>>>>> 4ab8d38 (revisi)
 
 return [
 
@@ -58,12 +66,21 @@ return [
     */
 
     'features' => [
+<<<<<<< HEAD
         // Features::termsAndPrivacyPolicy(),
         // Features::profilePhotos(),
         // Features::api(),
         // Features::teams(['invitations' => true]),
         Features::accountDeletion(),
     ],
+=======
+    'profile-updates',
+    'password-updates',
+    'account-deletion',
+],
+
+
+>>>>>>> 4ab8d38 (revisi)
 
     /*
     |--------------------------------------------------------------------------
@@ -78,4 +95,9 @@ return [
 
     'profile_photo_disk' => 'public',
 
+<<<<<<< HEAD
+=======
+    
+
+>>>>>>> 4ab8d38 (revisi)
 ];

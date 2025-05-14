@@ -39,9 +39,13 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="{{ route('profile.show') }}">Profile</a>
+<<<<<<< HEAD
                     @if(Auth::user()->role === 'admin')
                         <a class="dropdown-item" href="{{ route('admin.dashboard') }}">Admin Panel</a>
                     @endif
+=======
+                    
+>>>>>>> 4ab8d38 (revisi)
                     <div class="dropdown-divider"></div>
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
